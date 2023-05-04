@@ -27,9 +27,9 @@ export default function Home() {
 
 	const router = useRouter();
 
-	const submit = async () => {
+	const submit = () => {
 		if (!target) return;
-		await fetch(`${config.apiEndpoint}/api/v1/generate`, {
+		fetch(`${config.apiEndpoint}/api/v1/generate`, {
 			method: 'POST',
 			body: JSON.stringify({
 				url: target,

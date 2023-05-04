@@ -36,7 +36,15 @@ type Props = {
 };
 
 export const MgButton: React.FC<Props> = props => {
+	const handleOnClick = () => {
+		if (props.onClick) {
+			props.onClick();
+		}
+	};
+
 	return (
-			<Button color={props.color ?? 'primary'} onClick={() => props.onClick}>{props.children}</Button>
+		<Button color={props.color ?? 'primary'} onClick={() => handleOnClick()}>
+			{props.children}
+		</Button>
 	);
 };
