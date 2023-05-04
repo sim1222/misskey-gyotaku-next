@@ -9,20 +9,21 @@ type Props = {
 };
 
 export const MgCode: React.FC<Props> = props => {
-	const lang = Prism.languages[props.language] ? props.language : 'js';
+	const lang = props.language ?? 'js';
+	const prismLang = Prism.languages[lang] ? lang : 'js';
 
-	const code = React.useMemo(() => Prism.highlight(props.code, Prism.languages[lang], lang), [props.code]);
+	const code = React.useMemo(() => Prism.highlight(props.code, Prism.languages[prismLang], prismLang), [props.code]);
 
 	return (
 		<>
 			{props.block ? (
-				<pre className={`language-${lang}`}>
-					<code className={`language-${lang}`}>
+				<pre className={`language-${prismLang}`}>
+					<code className={`language-${prismLang}`}>
 						<div dangerouslySetInnerHTML={{ __html: code }} />
 					</code>
 				</pre>
 			) : (
-				<code className={`language-${lang}`}>
+				<code className={`language-${prismLang}`}>
 					<div dangerouslySetInnerHTML={{ __html: code }} />
 				</code>
 			)}
