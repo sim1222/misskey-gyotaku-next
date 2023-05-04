@@ -2,6 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Setup the environment variables:
+
+```bash
+API_ENDPOINT="https://api.example.com"
+```
+
 First, run the development server:
 
 ```bash

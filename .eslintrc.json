@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+		"next/core-web-vitals",
+		"plugin:react/recommended"
+	],
+	"plugins": [
+		"@emotion"
+	],
+	"rules": {
+		"react/no-unknown-property": ["error", { "ignore": ["css"] }],
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off"
+	}
 }
