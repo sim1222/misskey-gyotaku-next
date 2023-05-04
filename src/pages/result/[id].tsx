@@ -1,7 +1,9 @@
+import { MgLayout } from '@/components/MgLayout';
 import { MgCode } from '@/components/ui/MgCode';
 import { MgLink } from '@/components/ui/MgLink';
 import { config } from '@/utils/config';
 import { css } from '@emotion/react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
@@ -46,24 +48,27 @@ export default function Result() {
 
 	return (
 		<>
-			<div>
-				{image ? (
-					<>
-						<h1>{id}</h1>
-						<img css={image} src={image} />
-						<div css={pdfLink}>
-							<MgLink href={pdf} target="_blank">
-								Download PDF
-							</MgLink>
-						</div>
-						<div css={code}>
-							<MgCode code={JSON.stringify(json, null, 2)} block />
-						</div>
-					</>
-				) : (
-					<h2>Loading...</h2>
-				)}
-			</div>
+			<Head>
+				<title>Result</title>
+			</Head>
+			<MgLayout>
+					{image ? (
+						<>
+							<h1>{id}</h1>
+							<img css={image} src={image} />
+							<div css={pdfLink}>
+								<MgLink href={pdf} target="_blank">
+									Download PDF
+								</MgLink>
+							</div>
+							<div css={code}>
+								<MgCode code={JSON.stringify(json, null, 2)} block />
+							</div>
+						</>
+					) : (
+						<h2>Loading...</h2>
+					)}
+			</MgLayout>
 		</>
 	);
 }
