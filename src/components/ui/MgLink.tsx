@@ -2,8 +2,7 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 import { Interpolation, SerializedStyles, Theme, css } from '@emotion/react';
 import { useRouter } from 'next/router';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconExternalLink } from '@tabler/icons-react';
 
 const root = css`
 	display: inline-block;
@@ -23,8 +22,10 @@ const link = css`
 `;
 
 const icon = css`
-	display: inline-block;
+	display: inline;
 	height: 1rem;
+	width: 1rem;
+	vertical-align: text-bottom;
 `;
 
 type Props = {
@@ -41,7 +42,7 @@ export const MgLink: React.FC<Props> = props => {
 			{props.href ? (
 				<a css={link} href={props.href} target="_blank" rel="noreferrer">
 					{props.children}
-					<FontAwesomeIcon css={icon} icon={faArrowUpRightFromSquare} />
+					<IconExternalLink css={icon} />
 				</a>
 			) : (
 				<div css={link} onClick={() => router.push(props.target ?? '')}>
