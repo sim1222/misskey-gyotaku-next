@@ -1,8 +1,8 @@
 import '@/styles/reset.css'
 import '@/styles/global.scss'
 import '@/styles/variables.scss';
-import type { AppProps } from 'next/app'
-import { Zen_Kaku_Gothic_New } from "@next/font/google";
+import type {AppProps} from 'next/app'
+import {Zen_Kaku_Gothic_New} from "@next/font/google";
 
 const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
 	weight: ["300", "400", "500", "700"],
@@ -10,10 +10,17 @@ const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
 	subsets: ["latin-ext"],
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({Component, pageProps}: AppProps) {
 	return (
-		<main className={ZenKakuGothicNew.className}>
+		<>
+			{/* eslint-disable-next-line react/no-unknown-property */}
+			<style jsx global>{`
+				@font-face {
+					font-family: ${ZenKakuGothicNew.style.fontFamily};
+				}
+			`}</style>
 			<Component {...pageProps} />
-		</main>
-)
+
+		</>
+	)
 }
