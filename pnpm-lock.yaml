@@ -7,6 +7,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.10.8
     version: 11.10.8(@emotion/react@11.10.8)(@types/react@18.2.0)(react@18.2.0)
+  '@next/font':
+    specifier: ^13.4.3
+    version: 13.4.3
   '@tabler/icons-react':
     specifier: ^2.20.0
     version: 2.20.0(react@18.2.0)
@@ -301,6 +304,10 @@ packages:
     resolution: {integrity: sha512-Hpd74UrYGF+bq9bBSRDXRsRfaWkPpcwjhvachy3sr/R/5fY6feC0T0s047pUthyqcaeNsqKOY1nUGQQJNm4WyA==}
     dependencies:
       glob: 7.1.7
+    dev: false
+
+  /@next/font@13.4.3:
+    resolution: {integrity: sha512-plrCwj4s9fjjcMdkAo+MAVkKuSemRz6XLcow6RdkesEfNyfSD8eMU9+rR3khrXnCZ9zjsf9mcPG5ubvqDXU0mg==}
     dev: false
 
   /@next/swc-darwin-arm64@13.3.1:
