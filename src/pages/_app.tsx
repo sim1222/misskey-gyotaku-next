@@ -7,6 +7,7 @@ import { Zen_Kaku_Gothic_New } from "@next/font/google";
 const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
 	weight: ["300", "400", "500", "700"],
 	display: 'swap',
+	subsets: ["latin-ext"],
 })
 
 export default function App({ Component, pageProps }: AppProps) {
